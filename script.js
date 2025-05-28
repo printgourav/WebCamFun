@@ -1,8 +1,8 @@
 ﻿  const video = document.querySelector('.player');
   const canvas = document.querySelector('.photo');
   const ctx = canvas.getContext('2d');
-  const strip = canvas.querySelector('.strip');
-  const snap = canvas.querySelector('.snap');
+  const strip = document.querySelector('.strip');
+  const snap = document.querySelector('.snap');
 
 function getVideo(){
     navigator.mediaDevices.getUserMedia({video:true, audio:true})
@@ -67,7 +67,6 @@ function greenScreen(pixels){
     });
 
     for(let i = 0; i < pixels.data.length; i+=4) {
-
             red = pixels.data[i + 0];
             green = pixels.data[i + 1];
             blue = pixels.data[i + 2];
